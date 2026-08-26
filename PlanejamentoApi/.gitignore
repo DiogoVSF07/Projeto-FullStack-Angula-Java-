@@ -1,0 +1,131 @@
+# ===== ARQUIVOS DE BUILD E DEPENDÊNCIAS =====
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+*.jar
+!maven-wrapper.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.tgz
+
+# ===== IDEs =====
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+*.code-workspace
+
+### Eclipse ###
+.project
+.classpath
+.settings/
+bin/
+
+# ===== AMBIENTE E CONFIGURAÇÕES =====
+.env
+.env.*
+!.env.example
+application-*.properties
+application-*.yml
+!application-example.properties
+!application-example.yml
+bootstrap-*.properties
+bootstrap-*.yml
+*.local
+*.backup
+*.bak
+
+# ===== LOGS E TEMPORÁRIOS =====
+*.log
+logs/
+*.log.gz
+*.tmp
+*.swp
+*.swo
+*~
+temp/
+tmp/
+/data/
+
+# ===== BANCO DE DADOS =====
+*.db
+*.h2.db
+*.mv.db
+*.trace.db
+*.lck
+hsqldb/
+derby/
+
+# ===== TESTES E COBERTURA =====
+coverage/
+.coveralls.yml
+*.jacoco
+jacoco.exec
+test-output/
+target/surefire-reports/
+target/failsafe-reports/
+target/checkstyle/
+target/spotbugs/
+target/pmd/
+target/jacoco/
+
+# ===== DUMPS E PERFILAMENTO =====
+*.dump
+*.hprof
+*.heap
+
+# ===== SISTEMA OPERACIONAL =====
+.DS_Store
+Thumbs.db
+*.~
+*.lock
+
+# ===== DOCKER =====
+docker-compose.override.yml
+*.pid
+Dockerfile.*
+!Dockerfile
+
+# ===== RELATÓRIOS =====
+reports/
+*.html
+*.xml
+!pom.xml
+
+# ===== CACHE DO MAVEN =====
+.mvn/local-settings.xml
+.mvn/extensions.xml
+!**/maven-wrapper/
+
+# ===== OUTROS =====
+**/META-INF/
+**/OSGI-INF/

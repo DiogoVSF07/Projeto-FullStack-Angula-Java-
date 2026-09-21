@@ -1,0 +1,27 @@
+<header class="header">
+    <h1>Meus Cartões</h1>
+
+    <div class="user-area">
+        <span class="user-neme">Olá, Usuário</span>
+        <i class="fa-solid fa-circle-user"></i>
+    </div>
+</header>
+
+<main class="content">
+    <div class="card-full">
+        <div class="table-card">
+            @if(listagem$ | async; as listagem){
+                <table class="datatable">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Bandeira</th>
+                            <th>Status</th>
+                            <th class="text-center">Ações</th>
+                        </tr>
+                    </thead>
+                </table>
+            }
+        </div>
+    </div>
+</main>

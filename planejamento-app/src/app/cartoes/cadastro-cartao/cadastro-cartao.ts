@@ -4,6 +4,7 @@ import { CartaoService } from '../cartao-service';
 import { DadosCartaoFrom, DetalhesCartao } from '../dados-cartao';
 import { ValidatorsErrorResponse } from '../../common/validation/validation-error-model';
 import { CommonModule } from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 interface CadastroCartaoForm {
   nome: FormControl<string>;
@@ -20,6 +21,7 @@ export class CadastroCartao implements OnInit{
 
   form!: FormGroup<CadastroCartaoForm>;
   service = inject(CartaoService);
+  toast = inject(ToastrService);
 
   ngOnInit(): void {
     this.form = new FormGroup<CadastroCartaoForm>({
@@ -31,6 +33,7 @@ export class CadastroCartao implements OnInit{
   isFormInvalid() : boolean {
     if(this.form.invalid){
       this.form.markAllAsTouched();
+      this.toast.error('Erro de vaidação. Verifique os valores informados.');
       return true;
     }
     return false;
@@ -48,6 +51,7 @@ export class CadastroCartao implements OnInit{
         .subscribe({
           next: (response: DetalhesCartao) => {
             console.log('recebendo a resposta do servidor:', response);
+            this.toast.success('Cartão Cadastrado/Atualizado com sucesso!');
           },
           error: (error) => this.onApiError(error)
         });
@@ -64,12 +68,12 @@ export class CadastroCartao implements OnInit{
   }
 
     private onApiError (response: any) : void {
-    if(response.status === 422){
-      this.aplicarErrorValidation(response.error);
-      return;
+        if(response.status === 422){
+          this.aplicarErrorValidation(response.error);
+          this.toast.error('Erro de validação. Verifique os valores informados.');
+          return;
+        }
+      this.toast.error('Ocorreu um erro ao processar a requisição.');
+      console.error(response.error);
     }
-  }
-
 }
-
-

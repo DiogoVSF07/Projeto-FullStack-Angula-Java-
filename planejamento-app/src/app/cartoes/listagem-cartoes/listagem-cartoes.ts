@@ -3,10 +3,11 @@ import { CartaoService } from '../cartao-service';
 import { Observable } from 'rxjs';
 import { PageResult } from '../../common/pagination/page-result';
 import { DetalhesCartao } from '../dados-cartao';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-listagem-cartoes',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './listagem-cartoes.html',
   styleUrl: './listagem-cartoes.scss',
 })

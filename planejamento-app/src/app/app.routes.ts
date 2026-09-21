@@ -11,7 +11,7 @@ export const routes: Routes = [
             {
                 path:'cadastro-cartoes',
                 component: CadastroCartao
-            }
+            },
             {
                 path:'listagem-cartoes',
                 component: ListagemCartoes

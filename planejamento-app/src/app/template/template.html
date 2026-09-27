@@ -5,12 +5,27 @@
             <span>Planeja</span>
         </div>
 
-
         <nav class="sidebar-menu">
-            <a class="menu-item active">
+            <a class="menu-item active"  [routerLink]="['/paginas']">
                 <i class="fa-solid fa-chart-line"></i>
                 <span>Dashboard</span>
             </a>
+
+            <a class="menu-item" [routerLink]="['/paginas/listagem-cartoes']">
+                <i class="fa fa-solid fa-credit-card "></i>
+                <span>Cartões</span>
+            </a>
+
+            <a class="menu-item" [routerLink]="['/paginas/listagem-categorias']">
+                <i class="fa fa-solid fa-icons"></i>
+                <span>Categorias</span>
+            </a>
+
+            <a class="menu-item" [routerLink]="['/paginas/listagem-lancamentos']">
+                <i class="fa fa-solid fa-money-bill-transfer"></i>
+                <span>Lançamentos</span>
+            </a>
+
         </nav>
     </aside>
 

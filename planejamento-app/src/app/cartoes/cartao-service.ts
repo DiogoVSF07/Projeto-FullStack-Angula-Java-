@@ -16,7 +16,19 @@ export class CartaoService {
   }
 
   listar(page: number = 0, size: number = 10) : Observable<PageResult<DetalhesCartao>> {
-    const url = '${this.baseUrl}?page={page}&size=${size}';
+    const url = `${this.baseUrl}?page=${page}&size=${size}`;
     return this.http.get<PageResult<DetalhesCartao>>(url);
+  }
+
+  obterPorId(id: string): Observable<DadosCartaoFrom>{
+    return this.http.get<DetalhesCartao>(`${this.baseUrl}/${id}`)
+  }
+
+  atualizar(id: string, dados: DadosCartaoFrom) : Observable<void> {
+    return this.http.put<void>( `${this.baseUrl}/${id}`, dados);
+  }
+
+  mudarStatus(id: string) : Observable<void> {
+    return this.http.patch<void>( `${this.baseUrl}/${id}/status`, null);
   }
 }

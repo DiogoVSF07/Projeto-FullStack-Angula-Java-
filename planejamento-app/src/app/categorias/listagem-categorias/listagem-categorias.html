@@ -1,10 +1,10 @@
-<app-header titulo="Meus Cartões"></app-header>
+<app-header titulo="Minhas Categorias"></app-header>
 
 <main class="content">
     <div class="card-full">
         <button class="btn-secondary"
                 type="button"
-                [routerLink]="['/paginas/cadastro-cartoes']">
+                [routerLink]="['/paginas/cadastro-categoria']">
                 <i class="fa-solid fa-plus"></i>
                 Cadastrar Novo
         </button>
@@ -14,35 +14,29 @@
                     <thead>
                         <tr>
                             <th>Nome</th>
-                            <th>Bandeira</th>
                             <th>Status</th>
                             <th class="text-center">Ações</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @for( cartao of listagem.content; track cartao.id){
+                        @for( categoria of listagem.content; track categoria.id){
                             <tr>
-                                <td>{{ cartao.nome }}</td>
-                                <td>{{ cartao.bandeira }}</td>
+                                <td>{{ categoria.nome }}</td>
                                 <td>
                                     <span class="badge" 
-                                        [ngClass]="cartao.ativo ? 'badge-success' : 'badge-warning'">
-                                        {{ cartao.ativo ? 'Ativo' : 'Inativo' }}
+                                        [ngClass]="categoria.ativo ? 'badge-success' : 'badge-warning'">
+                                        {{ categoria.ativo ? 'Ativo' : 'Inativo' }}
                                     </span>
                                 </td>
                                 <td class="taxt-center">
-                                    <button class="icon-btn" title="Editar"
-                                        (click)="prepararEdicao(cartao.id)">
-                                        <i class="fa-solid fa-pen"></i>
-                                    </button>
 
                                     <button class="icon-btn"
-                                        [ngClass]="cartao.ativo ? 'danger' : 'success'"
-                                        [attr.title]="cartao.ativo ? 'Desativar' : 'Ativar'"
-                                        (click)="mudarStatus(cartao.id)">
+                                        [ngClass]="categoria.ativo ? 'danger' : 'success'"
+                                        [attr.title]="categoria.ativo ? 'Desativar' : 'Ativar'"
+                                        (click)="mudarStatus(categoria.id)">
                                         <i class="fa-solid"
-                                            [ngClass]="cartao.ativo ? 'fa-ban' : 'fa-check' ">
+                                            [ngClass]="categoria.ativo ? 'fa-ban' : 'fa-check' ">
                                         </i>
                                     </button>
                                 </td>
